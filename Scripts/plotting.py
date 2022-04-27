@@ -82,14 +82,13 @@ fg.tight_layout()
 fg.savefig("POC_high_emissions.png")
 
 #%%
-keep = keep.set_index("State")
+keep = keep.set_index("Plant Name")
 
 (fig1, ax1) = plt.subplots(dpi = 300)
 bars = ["POC Pop","State avg for POC Pop"]
-keep[bars].plot.bar(ax=ax1)
+keep[bars].plot.barh(ax=ax1)
 
-ax1.set_xlabel("State with High Polluting Coal Plant")
-ax1.set_ylabel("% of POC Population")
+ax1.set_xlabel("% of POC Population")
 fig1.tight_layout()
 fig1.savefig("POC_comparison.png")
 

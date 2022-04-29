@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 coal_plants = pd.read_csv("coal_plants_communities.csv")
+ring_data = pd.read_csv("ring_info.csv")
 
 #%%
 
@@ -33,6 +34,7 @@ fig1,ax1 = plt.subplots()
 
 coal_plants.plot.scatter("Annual Net Gen", "PM_Emissions",ax=ax1)
 
+ax1.set_ylabel = "Particulate Matter Emissions"
 fig1.tight_layout()
 fig1.savefig("Net_Gen_PM_Emissions.png")
 
@@ -45,7 +47,7 @@ sns.boxenplot(data=coal_plants, x="bin", y="PM_Emissions",
               ax=ax1, showfliers=False)
 
 ax1.set_xlabel("State Percentile of POC Population")
-ax1.set_ylabel("Particulate Matter Emissions")
+ax1.set_ylabel("PM Emissions")
 
 fig.tight_layout()
 fig.savefig("State_pctile_poc_emissions.png")
@@ -68,15 +70,19 @@ fig.savefig("State_pctile_low_inc_emissions.png")
 
 #%% plotting poc population share in figure
 
+ring_data["pop_poc"] = ring_data["pop_poc"].round()
+ring_data["pct_poc"] = ring_data["pct_poc"].round()
+ring_data["POC Share in Rings"] = ring_data["pct_poc"]
+
 plt.rcParams['figure.dpi'] = 300
 
-fg = sns.relplot(data=keep, x='State', y='PM_Emissions', 
-                 size='POC Pop', 
+fg = sns.relplot(data=ring_data, x='pop_poc', y='radius', 
+                 size="POC Share in Rings", 
                  sizes=(10,200),
                  facet_kws=
-                 {'despine': False, 'subplot_kws': {'title': 'Ratio of People of Color Near High Emitting Plants'}})
+                 {'despine': False, 'subplot_kws': {'title': 'People of Color Inside Plants Radius'}})
 
-fg.set_axis_labels('State', 'PM Emissions')
+fg.set_axis_labels('Population People of Color', 'Ring Radius (in miles)')
 
 fg.tight_layout()
 fg.savefig("POC_high_emissions.png")

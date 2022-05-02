@@ -36,4 +36,15 @@ keep["Annual Net Gen"] = keep["Annual Net Gen"]/1e6
 keep.plot.scatter("Annual Net Gen", "Capacity Factor", ax=ax1)
 keep.to_csv("high_emmissions_coal_plants.csv")
 
+#%%
+keep = keep.set_index("Plant Name")
 
+(fig1, ax1) = plt.subplots(dpi = 300)
+bars = ["POC Pop","State avg for POC Pop"]
+keep[bars].plot.barh(ax=ax1)
+
+ax1.set_xlabel("% of POC Population")
+fig1.tight_layout()
+fig1.savefig("POC_comparison.png")
+
+#%%

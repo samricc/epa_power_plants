@@ -29,8 +29,10 @@ With these data sets, coal plants are selected and analyzed for potential patter
 **Data:**
 1. The EPA EJ Screening Data is required for the script. In order to get access to it, navigate to this link and select download where it says “Power Plants and Neighboring Communities (xlsx)” under the “Additional Graphs and Data” section.
 1. The data file is very large and a separate csv will need to be created that has a list of the column names from the “Power Plants and Neighboring Communities (xlsx)” and another column that has an x in it marking the column names you’d like to bring into the script. 
+
 **Purpose:**
 1. This script filters through the large excel file that was downloaded from the EPA and renames the column names of the existing file in order to make it easier to analyze.
+
 **Output:**
 1.  The output of this script is "coal_plants_communities.csv" which will be used in later scripts for analysis. 
 

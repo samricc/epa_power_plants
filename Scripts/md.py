@@ -23,3 +23,5 @@ md_join = plant_data.join(md_data, how = "left")
 md_join["total_md"] = md_join["PM25_2011"]* md_join["PM_Emissions"]/100
 
 print(md_join["total_md"])
+
+md_join.to_csv("md_mt_plant.csv",index=False)

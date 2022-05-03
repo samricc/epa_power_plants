@@ -138,3 +138,4 @@ With these data sets, coal plants are selected and analyzed for potential patter
     1. Create a new intersection layer by doing the below steps and then unclick the “Mt_high_emissions” layer and save as a png 
             1. By going to Vector → Data Management Tools → Join Attribute by Location → set it up like the following:
 
+

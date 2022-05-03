@@ -8,32 +8,21 @@
 The goal of the following scripts is to determine if the closure of coal plants
 has an impact on the health of known environmental justice communities. This was
 done by downloading three different data sets:
+
     1. EPA EJ Screening Data
-        1. Plant level data set that provides demographic and emissions data 
-        within a 3 mile radius of the plant.
-    2. Census 2021 Block Group
-        2. 2021 block group level census API data for the state of Montana. 
-    3. Marginal Damage Modeling Tool
-        3. The Air Pollution Emission Experiments and Policy analysis (APEEP) to 
-        calculate MD.
-With these data sets, coal plants are selected and analyzed for potential patterns 
-with state percentile people of color. A deeper analysis of the high polluting 
-coal plants took place by determining if there were any coal plants that had a 
-greater population of people of color relative to the remainder of the state. 
-One plant in particular, Colstrip, in Montana was identified as having a greater 
-number of people of color than the state average population of people of color. 
-This demographic information was graphed in QGIS and the marginal damage of the 
-PM emissions in the county of the plant was calculated.
+        1. Plant level data set that provides demographic and emissions data within a 3 mile radius of the plant.
+    1. Census 2021 Block Group
+        1. 2021 block group level census API data for the state of Montana. 
+    1. Marginal Damage Modeling Tool
+        1. The Air Pollution Emission Experiments and Policy analysis (APEEP) to calculate MD.
+        
+With these data sets, coal plants are selected and analyzed for potential patternswith state percentile people of color. A deeper analysis of the high polluting  coal plants took place by determining if there were any coal plants that had a  greater population of people of color relative to the remainder of the state. One plant in particular, Colstrip, in Montana was identified as having a greater number of people of color than the state average population of people of color.This demographic information was graphed in QGIS and the marginal damage of the  PM emissions in the county of the plant was calculated.
 
 ## Conclusions:
-The Colstrip Plant in Montana is a relatively high PM emitting plant that has a
-greater share of people of color near the plant in comparison to the state share 
-of people of color, therefore impacting people of color disproportionately.
-EPA dataset does not capture the full disproportionate amount of people of color
-in the surrounding areas of the plants. While the MD for the county that the 
-Colstrip Plant is located is not necessarily just for the people in the rings, 
-when coupled with the disproportionate demographics in the area, it could be 
-recommended that the plant should close down.
+
+    1. The Colstrip Plant in Montana is a relatively high PM emitting plant that has a greater share of people of color near the plant in comparison to the state share of people of color, therefore impacting people of color disproportionately.
+    1. EPA dataset does not capture the full disproportionate amount of people of color in the surrounding areas of the plants. 
+    1. While the MD for the county that the Colstrip Plant is located is not necessarily just for the people in the rings, when coupled with the disproportionate demographics in the area, it could be recommended that the plant should close down.
 
 ## Instructions:
 ### A. Script filter.py

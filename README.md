@@ -1,9 +1,9 @@
 # epa_power_plants
 
-#Title: 
-###DECOMMISSIONING COAL PLANTS & THE HEALTH IMPACT ON ENVIRONMENTAL JUSTICE
+# Title: 
+### DECOMMISSIONING COAL PLANTS & THE HEALTH IMPACT ON ENVIRONMENTAL JUSTICE
 
-##Summary: 
+## Summary: 
 
 The goal of the following scripts is to determine if the closure of coal plants
 has an impact on the health of known environmental justice communities. This was
@@ -25,7 +25,7 @@ number of people of color than the state average population of people of color.
 This demographic information was graphed in QGIS and the marginal damage of the 
 PM emissions in the county of the plant was calculated.
 
-##Conclusions:
+## Conclusions:
 The Colstrip Plant in Montana is a relatively high PM emitting plant that has a
 greater share of people of color near the plant in comparison to the state share 
 of people of color, therefore impacting people of color disproportionately.
@@ -35,8 +35,8 @@ Colstrip Plant is located is not necessarily just for the people in the rings,
 when coupled with the disproportionate demographics in the area, it could be 
 recommended that the plant should close down.
 
-##Instructions:
-###A. Script filter.py
+## Instructions:
+### A. Script filter.py
     **Data:**
         1. The EPA EJ Screening Data is required for the script. In order to get 
         access to it, navigate to this link and select download where it says 
@@ -54,7 +54,7 @@ recommended that the plant should close down.
         The output of this script is "coal_plants_communities.csv" which will 
         be used in later scripts for analysis. 
 
-###B. Script census.py
+### B. Script census.py
     **Data:**
         1. The Census API is used for this script and will require an API key. 
         2. Go to **https://api.census.gov/data/key_signup.html** and request an API key. 
@@ -70,7 +70,7 @@ recommended that the plant should close down.
         (number of people of color, white people, total population) for the 
         state of Montana with its corresponding COUNTYFP and STATEFP. 
         
-##C. Script high_emissions.py
+## C. Script high_emissions.py
     **Data:**
         1. The data for this script takes the csv file that was created from 
         “filter.py”, specifically "coal_plants_communities.csv".
@@ -99,7 +99,7 @@ recommended that the plant should close down.
             4. One csv file, “"high_emmissions_coal_plants.csv", listing the 
             plants that are emitting more than 3000 PM tons.
 
-##D. Script rings.py
+## D. Script rings.py
     **Data:**
         1. This script uses the output from the “high_emissions.py”, 
         specifically “"high_emmissions_coal_plants.csv".
@@ -120,7 +120,7 @@ recommended that the plant should close down.
             3. A csv file, "mt_plant_data.csv" showing the demographic and 
             pollution information from the plant in Montana.
 
-##E. Script plotting.py
+## E. Script plotting.py
     **Data:**
         1. This script pulls data in from the “rings.py”, specifically 
         "ring_info.csv".
@@ -136,7 +136,7 @@ recommended that the plant should close down.
         2. One png file, “POC_high_emissions.png”, showing the distribution of 
         people of color within Montana.
 
-##F. Script join.py
+## F. Script join.py
     **Data:**
         1. This script uses 2021 census block data for the state of Montana 
         (FIPS code = 30). Navigate to this link and under Census Block groups, 
@@ -157,7 +157,7 @@ recommended that the plant should close down.
         information within the rings created from the previous script, where 
         the rings are in miles.
 
-##G. Script md.py
+## G. Script md.py
     **Data:**
         1. This script uses data from The Air Pollution Emission Experiments 
         and Policy analysis (APEEP) model. Navigate to this link and sign up 
@@ -179,7 +179,7 @@ recommended that the plant should close down.
         demographic and plant based data including the marginal damage for 
         the pollution in the county.
 
-##H. QGIS mt_plant_emissions.qgz
+## H. QGIS mt_plant_emissions.qgz
     **Data:**
         1. This QGIS file is made from the "mt_high_emissions.gpkg" file and
          contains the following layers:

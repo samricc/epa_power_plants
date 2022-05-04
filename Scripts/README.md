@@ -137,3 +137,4 @@ With these data sets, coal plants are selected and analyzed for potential patter
 1. A png of just the rings, the plant, and the demographics within those rings by completing a spatial join within QGIS
     1. Create a new intersection layer by doing the below steps and then unclick the “Mt_high_emissions” layer and save as a png 
             1. By going to Vector → Data Management Tools → Join Attribute by Location → set it up like the following:
+            ![GIS](interaction_gis.png)

@@ -14,7 +14,13 @@ import numpy as np
 #%% pull in api to identify national population and how they identify
 
 variables = {'B02001_001E':'pop_total', 
-             'B02001_002E':'pop_white'}
+             'B02001_002E':'pop_white',
+             'B02001_003E':'pop_black',
+             'B02001_004E':'pop_aian',
+             'B02001_005E':'pop_asian',
+             'B02001_006E':'pop_pacific',
+             'B02001_007E':'pop_other',
+             'B02001_008E':'pop_2'}
 
 var_list = variables.keys()
 
@@ -45,9 +51,10 @@ mt_pop["pop_white"] = mt_pop["pop_white"].astype(int)
 mt_pop["pop_poc"] = mt_pop["pop_total"] - mt_pop["pop_white"].astype(int)
 
 mt_pop["STATEFP"] = mt_pop["state"]
-keep_cols = ["pop_total","pop_white","pop_poc","STATEFP","county"]
+keep_cols = ["pop_total","pop_white","pop_poc","STATEFP","county","pop_aian",
+             "pop_black","pop_asian","pop_pacific","pop_other","pop_2"]
 mt_pop = mt_pop[keep_cols]
 
 
-mt_pop.to_csv("mt_poc.csv",index=True)
+mt_pop.to_csv("3. MT Demographics/mt_poc.csv",index=True)
 

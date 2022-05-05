@@ -9,7 +9,7 @@ Created on Mon Apr 25 14:14:41 2022
 import pandas as pd
 import geopandas as gpd
 
-mt_poc = pd.read_csv("mt_poc.csv", dtype={"GEOID":str,"STATEFP":str})
+mt_poc = pd.read_csv("3. MT Demographics/mt_poc.csv", dtype={"GEOID":str,"STATEFP":str})
 census_data = gpd.read_file("cb_2021_30_bg_500k.zip",dtype={"GEOID":str})
                           
 census_data = census_data.set_index("GEOID")
@@ -22,12 +22,12 @@ merged["pct_pop"] = 100*(merged["pop_poc"]/merged["pop_total"])
 
 merged["avg_pct_pop"] = merged["pct_pop"].sum()/900
 
-merged.to_file("mt_high_emissions.gpkg", layer = "bg")
+merged.to_file("5. Rings & GIS/mt_high_emissions.gpkg", layer = "bg")
 
 #%%
 
-rings = gpd.read_file("mt_high_emissions.gpkg", layer="rings")
-pop = pd.read_csv("mt_poc.csv",dtype={"GEOID":str})
+rings = gpd.read_file("5. Rings & GIS/mt_high_emissions.gpkg", layer="rings")
+pop = pd.read_csv("3. MT Demographics/mt_poc.csv",dtype={"GEOID":str})
 pop = pop.set_index("GEOID")
 
 bgs = gpd.read_file("cb_2021_30_bg_500k.zip")
@@ -57,6 +57,12 @@ ring_info = realloc.groupby("radius").sum()
 
 #%%
 
+ring_info["pct_aian"] = 100*(ring_info["pop_aian"]/ring_info["pop_total"])
+ring_info["pct_black"] = 100*(ring_info["pop_black"]/ring_info["pop_total"])
+ring_info["pct_asian"] = 100*(ring_info["pop_asian"]/ring_info["pop_total"])
+ring_info["pct_pacific"] = 100*(ring_info["pop_pacific"]/ring_info["pop_total"])
+ring_info["pct_other"] = 100*(ring_info["pop_other"]/ring_info["pop_total"])
+ring_info["pct_2"] = 100*(ring_info["pop_2"]/ring_info["pop_total"])
 ring_info["pct_poc"] = 100*(ring_info["pop_poc"]/ring_info["pop_total"])
 
-ring_info.to_csv("ring_info.csv",index=True)
+ring_info.to_csv("5. Rings & GIS/ring_info.csv",index=True)

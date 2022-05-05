@@ -29,6 +29,6 @@ coal_plants = coal_plants.rename(columns=varmap["new_column_name"])
 
 
 #%%
-coal_plants.to_csv("coal_plants_communities.csv")
+coal_plants.to_csv("1. Updated CSV/coal_plants_communities.csv")
 
 

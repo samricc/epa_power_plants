@@ -11,7 +11,7 @@ import geopandas as gpd
 
 
 #%%
-coal_data = pd.read_csv("high_emmissions_coal_plants.csv")
+coal_data = pd.read_csv("2. High Emission Plants/high_emmissions_coal_plants.csv")
 coal_data["STATEFP"] = coal_data["FIPS State Code"]
 coal_data = coal_data.drop(columns="FIPS State Code")
 coal_data["STATEFP"] = coal_data["STATEFP"].astype(str)
@@ -23,8 +23,8 @@ geo = gpd.points_from_xy(x, y)
 pt_layer = gpd.GeoDataFrame(geometry=geo, crs=4326)
 pt_layer = pt_layer.to_crs( 32612 )
 
-mt_coal_data = mt_coal_data.to_csv("mt_plant_data.csv")
-pt_layer.to_file("mt_high_emissions.gpkg",layer="plant", index=False)
+mt_coal_data = mt_coal_data.to_csv("3. MT Demographics/mt_plant_data.csv")
+pt_layer.to_file("5. Rings & GIS/mt_high_emissions.gpkg",layer="plant", index=False)
 
 
 #%%
@@ -44,9 +44,9 @@ for r in radius:
     last_buf = this_buf
 ring_layer["geometry"] = geo_list
 ring_layer = ring_layer.set_crs(pt_layer.crs)
-ring_layer.to_file("mt_high_emissions.gpkg", layer="rings", index=False)
+ring_layer.to_file("5. Rings & GIS/mt_high_emissions.gpkg", layer="rings", index=False)
 
-ring_layer.to_csv("ring_data.csv",index=False)
+ring_layer.to_csv("5. Rings & GIS/ring_data.csv",index=False)
 
 
 #%%

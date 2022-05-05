@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 
-coal_plants = pd.read_csv("coal_plants_communities.csv")
+coal_plants = pd.read_csv("1. Updated CSV/coal_plants_communities.csv")
 
 #%%
 
@@ -25,7 +25,7 @@ coal_plants.plot.scatter("Annual Net Gen", "PM_Emissions",ax=ax1)
 
 ax1.set_ylabel = "Particulate Matter Emissions"
 fig1.tight_layout()
-fig1.savefig("Net_Gen_PM_Emissions.png")
+fig1.savefig("4. Graphs/Net_Gen_PM_Emissions.png")
 
 
 #%%
@@ -40,18 +40,18 @@ ax1.set_xlabel("State Percentile of POC Population")
 ax1.set_ylabel("PM Emissions")
 
 fig.tight_layout()
-fig.savefig("State_pctile_poc_emissions.png")
+fig.savefig("4. Graphs//State_pctile_poc_emissions.png")
 
 
 #%%%
 
-raw = pd.read_csv("coal_plants_communities.csv")
+raw = pd.read_csv("1. Updated CSV/coal_plants_communities.csv")
 keep = raw.query("PM_Emissions >= 3000")
 keep["Buffer Distance"] = 3
 keep["Annual Net Gen"] = keep["Annual Net Gen"]/1e6 
 (fig1, ax1) = plt.subplots()
 keep.plot.scatter("Annual Net Gen", "Capacity Factor", ax=ax1)
-keep.to_csv("high_emmissions_coal_plants.csv")
+keep.to_csv("2. High Emission Plants/high_emmissions_coal_plants.csv")
 
 #%%
 keep = keep.set_index("Plant Name")
@@ -62,6 +62,6 @@ keep[bars].plot.barh(ax=ax1)
 
 ax1.set_xlabel("% of POC Population")
 fig1.tight_layout()
-fig1.savefig("POC_comparison.png")
+fig1.savefig("4. Graphs/POC_comparison.png")
 
 #%%

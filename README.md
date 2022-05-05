@@ -19,10 +19,8 @@ With these data sets, coal plants are selected and analyzed for potential patter
 
 ## Conclusions:
 
-1. The Colstrip Plant in Montana is a relatively high PM emitting plant that has a greater share of people of color near the plant in comparison to the state share of people of color, therefore impacting people of color disproportionately.
-
-
-
+1. The Colstrip Plant in Montana is a relatively high PM emitting plant that has a greater share of people of color near the plant in comparison to the state share of people of color, therefore impacting people of color disproportionately. 
+    1. Specifically, it was identified that there are a significantly greater share of people that identify as Native Americans near the coal plant than any other demographic. 
 1. EPA dataset does not capture the full disproportionate amount of people of color in the surrounding areas of the plants. 
 1. While the MD for the county that the Colstrip Plant is located is not necessarily just for the people in the rings, when coupled with the disproportionate demographics in the area, it could be recommended that the plant should close down.
 

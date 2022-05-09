@@ -116,9 +116,9 @@ People of color are disproportionately affected by climate change and other envi
 
 From these scritps it was it was identifed that the Colstrip Coal Plan is one of the top emitting plants in the country, with a larger popoulation of people of color in comparison to the rest of the state. 
 
-![POC Near High Emitting Plants](/4. Graphs/POC_comparison.png)
+![POC Near High Emitting Plants](/Scripts/4. Graphs/POC_comparison.png)
 
 It was also determined that the Native American reservations, Crow and Northern Cheynne, are the primary population that makes up that people of color population near the plant. Given that it does not appear that Colstrip is owned by a Native American tribe, it is suggested that this plant is closed down in order to save **$48,562,481** in marginal damages. It is also suggested that the EPA increase the radius of demographics in the EJ data set in order to capture greater demographic disparities.
 
-![Map of Montana and Colstrip](/5. Rings & GIS/colstrip_demographics.png)
+![Map of Montana and Colstrip](/Scripts/5. Rings & GIS/colstrip_demographics.png)
 

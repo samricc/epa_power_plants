@@ -62,5 +62,5 @@ keep_cols = ["pop_total","pop_white","pop_poc","STATEFP","county","pop_aian",
 mt_pop = mt_pop[keep_cols]
 
 
-mt_pop.to_csv("3. MT Demographics/mt_poc.csv",index=True)
+mt_pop.to_csv("3.MT_Demographics/mt_poc.csv",index=True)
 

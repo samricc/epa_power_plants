@@ -12,7 +12,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-ring_data = pd.read_csv("ring_info.csv")
+ring_data = pd.read_csv("5.Rings_&_GIS/ring_info.csv")
 
 #%%
 
@@ -33,7 +33,7 @@ fg = sns.relplot(data=ring_data, x='pop_poc', y='radius',
 
 
 fg.tight_layout()
-fg.savefig("POC_high_emissions.png")
+fg.savefig("4.Graphs/POC_high_emissions.png")
 
 
 

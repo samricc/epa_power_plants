@@ -9,7 +9,7 @@ People of color are disproportionately affected by climate change and other envi
 
     **Details:** Plant level data set that provides demographic and emissions data within a 3 mile radius of the plant.
 
-    **Access:** Go to **https://www.google.com/url?q=https://www.epa.gov/airmarkets/power-plants-and-neighboring-communities%23mapping&sa=D&source=docs&ust=1652111663312706&usg=AOvVaw0IG-me_26HXoBMcHQsbmT3** and select download where it says “Power Plants and Neighboring Communities (xlsx)” under the “Additional Graphs and Data” section. 
+    **Access:** Go to **https://www.google.com/url?q=https://www.epa.gov/airmarkets/power-plants-and-neighboring-communities%23mapping&sa=D&source=docs&ust=1652111663312706&usg=AOvVaw0IG-me_26HXoBMcHQsbmT3** and select download where it says “Power Plants and Neighboring Communities (xlsx)” under the “Additional Graphs and Data” section.
 
 1. **Census 2021 Block Group API:**
      
@@ -32,8 +32,6 @@ People of color are disproportionately affected by climate change and other envi
 ## Scripts:
 ### A. Script filter.py
 **Purpose:**
-1. The data file is very large and a separate csv will need to be created that has a list of the column names from the “Power Plants and Neighboring Communities (xlsx)” and another column that has an x in it marking the column names you’d like to bring into the script. 
-
 1. This script filters through the large excel file that was downloaded from the EPA and renames the column names of the existing file in order to make it easier to analyze.
 
 **Output:**
@@ -117,9 +115,9 @@ People of color are disproportionately affected by climate change and other envi
 From these scritps it was it was identifed that the Colstrip Coal Plan is one of the top emitting plants in the country, with a larger popoulation of people of color in comparison to the rest of the state. 
 
 
-![image](/4.Graphs/POC_comparison.png)
+![poc comparison](Scripts/4.Graphs/POC_comparison.png)
 
 It was also determined that the Native American reservations, Crow and Northern Cheynne, are the primary population that makes up that people of color population near the plant. Given that it does not appear that Colstrip is owned by a Native American tribe, it is suggested that this plant is closed down in order to save **$48,562,481** in marginal damages. It is also suggested that the EPA increase the radius of demographics in the EJ data set in order to capture greater demographic disparities.
 
-![image](/5.Rings_&_GIS/colstrip_demographics.png)
+![colstrip plant](Scripts/5.Rings_&_GIS/colstrip_demographics.png)
 

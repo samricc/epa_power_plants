@@ -11,7 +11,11 @@ import requests
 import numpy as np
 
 
-#%% pull in api to identify national population and how they identify
+#%% 
+
+#identify the list of variables to pull from the 2021 census and then use
+#the census api to pull in the columns and values. Set GEOID to the state,
+#county, tract, and block group so it can be mapped later.
 
 variables = {'B02001_001E':'pop_total', 
              'B02001_002E':'pop_white',
@@ -42,9 +46,11 @@ mt_pop = mt_pop.replace("-666666666",np.nan)
 mt_pop = mt_pop.rename(columns=variables)
 mt_pop["GEOID"] = mt_pop["state"]+ mt_pop["county"] + mt_pop["tract"] + mt_pop["block group"]
 mt_pop = mt_pop.set_index("GEOID")
-#mt_pop = mt_pop.drop(columns=["state","County"])
 
 #%%
+
+#calculate the share of non-white/people of color within Montana to clean
+#up and to export to csv.
 
 mt_pop["pop_total"] = mt_pop["pop_total"].astype(int)
 mt_pop["pop_white"] = mt_pop["pop_white"].astype(int)

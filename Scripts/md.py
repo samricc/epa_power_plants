@@ -6,6 +6,9 @@ Created on Fri Apr 29 11:06:17 2022
 @author: samanthariccio
 """
 
+
+#import necessary modules and read in demographics in Montana from previous script
+
 import pandas as pd
 
 plant_data = pd.read_csv("3. MT Demographics/mt_plant_data.csv")
@@ -17,6 +20,9 @@ plant_data["fips"] = 30087
 plant_data = plant_data.set_index("fips")
 
 #%%
+
+#join the data from the EPA and the demographics in MT to then calculate the 
+#marginal damage for the county that the Colstrip plant is based in.
 
 md_join = plant_data.join(md_data, how = "left")
 

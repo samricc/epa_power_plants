@@ -5,12 +5,17 @@ Created on Sun Apr 10 22:05:57 2022
 
 @author: samanthariccio
 """
+#import modules as necessary
 
 import pandas as pd
 import geopandas as gpd
 
 
 #%%
+
+#read in csv file of high emitting coal plants, and plot the latitude and longitude
+#of the Colstrip plant and export to a GIS file  with plant as the layer.
+
 coal_data = pd.read_csv("2. High Emission Plants/high_emmissions_coal_plants.csv")
 coal_data["STATEFP"] = coal_data["FIPS State Code"]
 coal_data = coal_data.drop(columns="FIPS State Code")
@@ -28,6 +33,9 @@ pt_layer.to_file("5. Rings & GIS/mt_high_emissions.gpkg",layer="plant", index=Fa
 
 
 #%%
+
+#generate the rings around the plant and export to a GIS file with rings as the
+#layer.
 
 radius = [3, 10, 15, 20, 30, 40]
 ring_layer = gpd.GeoDataFrame()
@@ -48,7 +56,5 @@ ring_layer.to_file("5. Rings & GIS/mt_high_emissions.gpkg", layer="rings", index
 
 ring_layer.to_csv("5. Rings & GIS/ring_data.csv",index=False)
 
-
-#%%
 
 

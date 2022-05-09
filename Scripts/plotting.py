@@ -6,12 +6,18 @@ Created on Wed Mar 23 12:00:45 2022
 @author: samanthariccio
 """
 
+#import necessary modules and read ring info csv from previous script.
+
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
 ring_data = pd.read_csv("ring_info.csv")
 
+#%%
+
+#create a three variable figure that maps the people of color, the rings, and the
+#share of people of color within the rings to export into png.
 
 ring_data["pop_poc"] = ring_data["pop_poc"].round()
 ring_data["pct_poc"] = ring_data["pct_poc"].round()
